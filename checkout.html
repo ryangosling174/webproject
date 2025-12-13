@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        input[type="email"], input[type="text"], input[type="tel"] {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 12px;
+            width: 100%;
+        }
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            min-height: 100%;
+            background-image: url('Nike brand.jpg');
+            z-index: -1;
+            background-repeat: no-repeat;
+            background-size: cover;
+            filter: blur(3px);
+        }
+        .transparent-card {
+            background-color: rgba(255, 255, 255, 0.1); /* subtle transparency */
+            backdrop-filter: blur(6px); /* adds glass effect */
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="p-4">
+        <a href="shoesproducts.html" class="inline-block px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-200">← Back to Shopping</a>
+    </div>
+
+    <div class="container mx-auto p-4 md:p-8">
+        <div class="flex flex-col lg:flex-row gap-6">
+            <!-- Contact Section -->
+            <div class="flex-1 transparent-card p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl font-bold mb-6 text-white">Contact</h2>
+                <input type="email" placeholder="Email" class="mb-4 w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <div class="flex items-center mb-6">
+                    <input type="checkbox" id="email-updates" class="form-checkbox text-blue-600 rounded">
+                    <label for="email-updates" class="ml-2 text-sm text-white">Email me with news and offers</label>
+                </div>
+            </div>
+
+            <!-- Delivery Section -->
+            <div class="flex-1 transparent-card p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl font-bold mb-6 text-white">Delivery</h2>
+                <select class="mb-4 w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-500">
+                    <option>Country/Region</option>
+                    <option>Cambodia</option>
+                    <option>Indonesia</option>
+                    <option>United States</option>
+                </select>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <input type="text" placeholder="First name" class="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <input type="text" placeholder="Instagram @" class="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <input type="text" placeholder="Address" class="mb-4 w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <input type="text" placeholder="City" class="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <input type="text" placeholder="Postal code (optional)" class="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <input type="tel" placeholder="Phone Number" class="mb-4 w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <div class="flex items-center">
+                    <input type="checkbox" id="save-info" class="form-checkbox text-blue-600 rounded">
+                    <label for="save-info" class="ml-2 text-sm text-white">Save this information for next time</label>
+                </div>
+            </div>
+
+            <!-- Payment & Billing Section -->
+            <div class="flex-1 transparent-card p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-bold mb-4 text-white">Payment</h2>
+                <p class="text-white text-xs mb-3">All transactions are secure and encrypted.</p>
+                <input type="text" placeholder="Enter payment method (e.g. Cash on Delivery, Credit Card)" class="mb-2 w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <input type="text" placeholder="Payment details (e.g. card number, instructions)" class="mb-4 w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <h2 class="text-xl font-bold mb-4 text-white">Billing address</h2>
+                <input type="text" placeholder="Billing address" class="mb-2 w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <input type="text" placeholder="Additional billing info (optional)" class="mb-4 w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <button class="w-full py-3 rounded-lg bg-blue-500 text-white font-bold shadow-lg hover:bg-blue-600 transition-colors duration-200">Pay now</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="background"></div>
+</body>
+</html>
+
+    <script>
+        // Live clock function
+
+    // --- IMPORTANT ---
+    // In shoesproducts.html, when the buyer clicks Buy, use this code:
+    //
+    // document.querySelectorAll('.buy-btn').forEach(btn => {
+    //   btn.addEventListener('click', function() {
+    //     const card = btn.closest('.shoe-card');
+    //     const image = card.querySelector('img').src;
+    //     const name = card.querySelector('.shoe-name').textContent;
+    //     const price = parseFloat(card.querySelector('.shoe-price').textContent.replace('$', ''));
+    //     const quantity = 1;
+    //     const selectedShoe = { image, name, price, quantity };
+    //     localStorage.setItem('selectedProducts', JSON.stringify(selectedShoe));
+    //     window.location.href = 'checkout.html';
+    //   });
+    // });
+    //
+    // This ensures the Order summary in checkout.html shows only the shoe the buyer selected.
+        document.addEventListener('DOMContentLoaded', () => {
+            const summaryItemsContainer = document.getElementById('summaryItems');
+            const subtotalPriceElement = document.getElementById('subtotalPrice');
+            const shippingCostElement = document.getElementById('shippingCost');
+            const totalPriceElement = document.getElementById('totalPrice');
+
+            // Get selected shoes from localStorage (from shoesproducts.html)
+            const selectedProductsJSON = localStorage.getItem('selectedProducts');
+            let products = [];
+            try {
+                const parsed = JSON.parse(selectedProductsJSON);
+                products = Array.isArray(parsed) ? parsed : (parsed ? [parsed] : []);
+            } catch (e) {
+                products = [];
+            }
+
+            // Set shipping cost
+            const shippingCost = products.length > 0 ? 2.00 : 0.00;
+
+            function renderSummary() {
+                summaryItemsContainer.innerHTML = '';
+                if (products.length === 0) {
+                    subtotalPriceElement.textContent = '$0.00';
+                    shippingCostElement.textContent = '$0.00';
+                    totalPriceElement.textContent = '$0.00 USD';
+                    return;
+                }
+                let subtotal = 0;
+                products.forEach(product => {
+                    const quantity = product.quantity || 1;
+                    const itemTotal = product.price * quantity;
+                    subtotal += itemTotal;
+                    const summaryItem = document.createElement('div');
+                    summaryItem.classList.add('flex', 'items-center', 'space-x-4');
+                    summaryItem.innerHTML = `
+                        <div class="relative w-16 h-16 rounded-lg overflow-hidden border border-gray-200 flex-shrink-0">
+                            <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover">
+                            <div class="absolute top-0 right-0 -mt-2 -mr-2 bg-gray-700 text-white text-xs font-semibold rounded-full w-5 h-5 flex items-center justify-center">${quantity}</div>
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="font-medium text-gray-800">${product.name}</h3>
+                            <p class="text-sm text-gray-700 font-semibold">Price: $${product.price.toFixed(2)}</p>
+                        </div>
+                        <span class="font-medium">Total: $${itemTotal.toFixed(2)}</span>
+                    `;
+                    summaryItemsContainer.appendChild(summaryItem);
+                });
+                const total = subtotal + shippingCost;
+                subtotalPriceElement.textContent = `$${subtotal.toFixed(2)}`;
+                shippingCostElement.textContent = `$${shippingCost.toFixed(2)}`;
+                totalPriceElement.textContent = `$${total.toFixed(2)} USD`;
+            }
+
+            // Initial render
+            renderSummary();
+        });
+    </script>
+</body>
+</html>
