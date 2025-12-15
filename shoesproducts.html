@@ -12,7 +12,7 @@
         }
 
         .product-card-bg {
-            background-color: #ad9b9b;
+            background-color: #none;
             filter: blur(1.8px);
             transition: filter 0.3s ease;
         }
@@ -63,8 +63,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url(Jordan\.jpg);
-            filter: blur(5px);
+            background-image: url(Just\ do\ it.jpg);
             background-repeat: no-repeat;
             background-size: cover;
             z-index: -1;
@@ -91,6 +90,9 @@
         button.px-5{
             color: #cfd6e4;
         }
+        p.text{
+
+        }
     </style>
 </head>
 <body class="bg-black-200">
@@ -99,7 +101,11 @@
     <div class="container mx-auto p-6 md:p-10 rounded-lg shadow-xl max-w-4xl mt-10 mb-10">
         <header class="text-center mb-8">
             <div class="flex items-center justify-between mb-4">
-                <a href="barcode.html" class="px-4 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-200 text-sm">← Go Back</a>
+                <a href="shoes landing page.html" 
+   class="px-4 py-2 text-white font-semibold rounded-lg hover:text-blue-700 transition-colors duration-200 text-sm">
+   Go Back
+</a>
+
                 <span id="liveClock" class="text-xl font-mono text-gray-700"></span>
             </div>
             <h1 class="text-3xl font-bold text-gray-800">
@@ -114,7 +120,6 @@
                 <select id="featured-categories" class="rounded-md border border-gray-300 p-2 text-gray-700">
                     <option value="mostbuy">most buy</option>
                     <option value="vintage">Vintage</option>
-                    <option value="normalbuy">normal buy</option>
                 </select>
             </div>
             <div class="flex items-center space-x-2 text-gray-600">
@@ -185,12 +190,11 @@
         <script>
         document.addEventListener('DOMContentLoaded', () => {
             const products = [
-                { id: 1, name: 'Air Force 1', price: 115.00, image: 'https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/2fe4f8a0-a435-4fdf-8b69-d63aa63f1f7b/custom-nike-air-force-1-mid.png' },
-                { id: 2, name: 'Nike LunarGlide 6', price: 143.00, image: 'https://www.pngitem.com/pimgs/m/4-40004_transparent-nike-shoe-png-png-download.png' },
-                { id: 5, name: 'Air Jordan 1 Retro High OG \'Artisanal Red\'', price: 99, image: 'https://static.nike.com/a/images/t_PDP_936_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/7bc1ba9e-20d2-4cd8-bd3e-7b4739c91312/JORDAN+1+RETRO+HIGH+OG+%28PS%29.png'},
-                { id: 6, name: 'Nike Zoom Fly 6', price: 140, image: 'https://static.nike.com/a/images/t_PDP_936_v1/f_auto,q_auto:eco/72fe7a6a-69fe-4db2-88cd-ec7dcabf88b0/ZOOM+FLY+6.png'},
-                { id: 7, name: 'Nike Air Zoom TR 1', price: 96, image: 'https://static.nike.com/a/images/t_PDP_936_v1/f_auto,q_auto:eco/9e0de4e1-6862-4d96-9821-94050582defe/M+NIKE+AIR+ZOOM+TR+1.png'},
-                { id: 8, name: 'Nike Air Presto ', price: 155, image: 'https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/fb7d320f-3baa-4337-81f7-a742e4f5be70/custom-air-presto-by-you.png'}
+                { id: 1, name: 'Air Force 1', price: 115.00, image: 'nike Air Force 1.png' },
+                { id: 2, name: 'Nike LunarGlide 6', price: 143.00, image: 'Nike lunar 6.png' },
+                { id: 5, name: 'Air Jordan', price: 99, image: 'Nike air jordan.png'},
+                { id: 6, name: 'Nike Zoom Fly 6', price: 140, image: 'Nike zoom fly 6.png'},
+                { id: 8, name: 'Nike Air Max Presto ', price: 155, image: 'Nike-air-max-air-presto.png'}
             ];
 
             let selectedProducts = [];

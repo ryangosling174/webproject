@@ -1,44 +1,70 @@
-// Dark mode toggle with localStorage
+// Dark mode toggle
 function Togglemode() {
-    document.getElementById("body").classList.toggle("dark");
-    // Save preference
-    const isDark = document.getElementById("body").classList.contains("dark");
-    localStorage.setItem("darkMode", isDark);
+  document.getElementById("body").classList.toggle("dark");
+  const isDark = document.getElementById("body").classList.contains("dark");
+  localStorage.setItem("darkMode", isDark);
 }
 
-// Load dark mode preference on page load
-window.addEventListener("DOMContentLoaded", () => {
-    const savedDarkMode = localStorage.getItem("darkMode") === "true";
-    if (savedDarkMode) {
-        document.getElementById("body").classList.add("dark");
-    }
+// Restore dark mode immediately
+if (localStorage.getItem("darkMode") === "true") {
+  document.getElementById("body").classList.add("dark");
+}
 
-    // Load sidebar preference
-    const savedSidebarState = localStorage.getItem("sidebarClosed") === "true";
-    if (savedSidebarState) {
-        document.querySelector(".sidebar").classList.add("closed");
-    }
+const wrapper = document.getElementById("main-content-wrapper");
+
+// --- Summary modal ---
+const summaryBtn = document.getElementById("summary-btn");
+const summaryModal = document.getElementById("summary-modal");
+const closeSummaryBtn = document.getElementById("close-summary-btn");
+
+summaryBtn.addEventListener("click", () => {
+  summaryModal.classList.add("active");
+  wrapper.classList.add("blur");
 });
 
-// Toggle sidebar menu
-function toggleSidebar() {
-    const sidebar = document.querySelector(".sidebar");
-    sidebar.classList.toggle("closed");
-    // Save preference
-    localStorage.setItem("sidebarClosed", sidebar.classList.contains("closed"));
-}
+closeSummaryBtn.addEventListener("click", () => {
+  summaryModal.classList.remove("active");
+  wrapper.classList.remove("blur");
+});
 
-// Set active menu item
-function setActiveMenu(event) {
-    event.preventDefault();
+// --- Contact modal ---
+const contactBtn = document.getElementById("contact-btn"); // lowercase id in HTML
+const contactModal = document.getElementById("contact-modal");
+const closeContactBtn = document.getElementById("close-contact-btn");
 
-    // Remove active class from all menu items
-    const menuItems = document.querySelectorAll(".menu-item");
-    menuItems.forEach(item => item.classList.remove("active"));
+contactBtn.addEventListener("click", () => {
+  contactModal.classList.add("active");
+  wrapper.classList.add("blur");
+});
 
-    // Add active class to clicked menu item
-    const clickedItem = event.target.closest(".menu-item");
-    if (clickedItem) {
-        clickedItem.classList.add("active");
-    }
+closeContactBtn.addEventListener("click", () => {
+  contactModal.classList.remove("active");
+  wrapper.classList.remove("blur");
+});
+
+// --- Close modals when clicking outside ---
+document.addEventListener("click", (event) => {
+  if (event.target === summaryModal) {
+    summaryModal.classList.remove("active");
+    wrapper.classList.remove("blur");
+  }
+  if (event.target === contactModal) {
+    contactModal.classList.remove("active");
+    wrapper.classList.remove("blur");
+  }
+});
+
+// --- Close modals with ESC key ---
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    summaryModal.classList.remove("active");
+    contactModal.classList.remove("active");
+    wrapper.classList.remove("blur");
+  }
+});
+
+// --- Slider function ---
+function moveSlide(index) {
+  const sliderWrapper = document.getElementById("sliderWrapper");
+  sliderWrapper.style.transform = `translateX(${-100 * index}vw)`;
 }
