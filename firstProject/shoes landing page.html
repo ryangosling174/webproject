@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shoes Landing Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="body">
+
+  <button class="theme-toggle" onclick="Togglemode()">
+    <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e3e3e3">
+      <path d="M480.28-96Q401-96 331-126t-122.5-82.5Q156-261 126-330.96t-30-149.5Q96-560 126-629.5q30-69.5 82.5-122T330.96-834q69.96-30 149.5-30t149.04 30q69.5 30 122 82.5T834-629.28q30 69.73 30 149Q864-401 834-331t-82.5 122.5Q699-156 629.28-126q-69.73 30-149 30Zm-.28-72q130 0 221-91t91-221q0-65-24-121.5T701-701L260-260q42 43 98.5 67.5T480-168Zm0-168v-48h192v48H480ZM336-504h48v-72h72v-48h-72v-72h-48v72h-72v48h72v72Z"/>
+    </svg>
+  </button>
+
+  <!-- Everything that should blur -->
+  <div class="main-content-wrapper" id="main-content-wrapper">
+    <div class="background"></div>
+
+    <nav class="nav-container">
+      <ul style="list-style: none; display: flex; gap: 20px; justify-content: center;">
+        <li class="nav-item">
+          <a href="shoesproducts.html" class="nav-link">
+            <span class="nav-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
+                <path d="M160-720v-80h640v80H160Zm0 560v-240h-40v-80l40-200h640l40 200v80h-40v240h-80v-240H560v240H160Zm80-80h240v-160H240v160Zm-38-240h556-556Zm0 0h556l-24-120H226l-24 120Z"/>
+              </svg>
+            </span>
+            <span class="nav-text">Shop now</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <button class="nav-link" id="summary-btn" type="button">
+            <span class="nav-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
+                <path d="M480-160q-134 0-227-93t-93-227q0-134 93-227t227-93q134 0 227 93t93 227q0 134-93 227t-227 93Zm0 80q174 0 297-123t123-297q0-174-123-297T480-880q-174 0-297 123T60-480q0 174 123 297T480-80Zm-36-240h72v-80h-72v80Zm0-160h72v-200h-72v200Z"/>
+              </svg>
+            </span>
+            <span class="nav-text">Summary</span>
+          </button>
+        </li>
+
+        <li class="nav-item">
+          <button class="nav-link-1" id="contact-btn" type="button">
+            <span class="nav-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
+                <path d="M162-120q-18 0-30-12t-12-30v-162q0-13 9-23.5t23-14.5l138-28q14-2 28.5 2.5T342-374l94 94q38-22 72-48.5t65-57.5q33-32 60.5-66.5T681-524l-97-98q-8-8-11-19t-1-27l26-140q2-13 13-22.5t25-9.5h162q18 0 30 12t12 30q0 125-54.5 247T631-329Q531-229 409-174.5T162-120Zm556-480q17-39 26-79t14-81h-88l-18 94 66 66ZM360-244l-66-66-94 20v88q41-3 81-14t79-28Zm358-356ZM360-244Z"/>
+              </svg>
+            </span>
+            <span class="nav-text">Contact</span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="slider">
+      <div class="sliderWrapper" id="sliderWrapper">
+        <div class="sliderItem"><img src="Nike Air Force 1.png" class="sliderImg" alt="Nike Shoe"></div>
+        <div class="sliderItem"><img src="Nike lunar 6.png" class="sliderImg" alt="Adidas Shoe"></div>
+        <div class="sliderItem"><img src="Air Jordan 1 Retro High OG 'Artisanal Red.png" class="sliderImg" alt="Sneaker"></div>
+        <div class="sliderItem"><img src="Nike Zoom Fly 6.png" class="sliderImg" alt="Sneaker"></div>
+        <div class="sliderItem"><img src="Nike-air-max-air-presto.png" class="sliderImg" alt="Sneaker"></div>
+      </div>
+
+      <div class="navButtons">
+        <div class="navButton" onclick="moveSlide(0)"></div>
+        <div class="navButton" onclick="moveSlide(1)"></div>
+        <div class="navButton" onclick="moveSlide(2)"></div>
+        <div class="navButton" onclick="moveSlide(3)"></div>
+        <div class="navButton" onclick="moveSlide(4)"></div>
+      </div>
+    </div>
+  </div> <!-- end of main-content-wrapper -->
+
+  <!-- Overlay for blur -->
+  <div id="overlay"></div>
+
+  <!-- Summary Modal -->
+  <div id="summary-modal" class="modal">
+    <div class="modal-content">
+      <h2>Summary About Myself</h2>
+      <h3>To build beautiful and functional user interfaces.</h3>
+      <p>Im not a professional designer web but i just want ya'll to know that i never give up on this thing. I always keep moving forward i never give up on the thing that i used to love since i was a kid and now i still doing it.
+         i don't care if it hard but remember success never easy to make.</p>
+      <button class="close-btn" id="close-summary-btn">Back</button>
+    </div>
+  </div>
+
+  <!-- Contact Modal -->
+  <div id="contact-modal" class="modal">
+    <div class="modal-content">
+      <h2>Contact Below</h2>
+      <p>Email: Takasiiwickyyy@gmail.com</p>
+      <p>Contact Number: 085346209</p>
+      <button class="close-btn" id="close-contact-btn">Back</button>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
